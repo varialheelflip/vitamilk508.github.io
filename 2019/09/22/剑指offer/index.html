@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>我的第一个博客！ | Vitamilk的博客</title>
+  <title>剑指offer面试题29：顺时针打印矩阵，基于动态规划思想的Java实现 | Vitamilk的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="对着教程一顿操作终于把博客建好了，打算先写一点最近做的算法题的心得体会，慢慢来吧。">
+  <meta name="description" content="题目描述输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字，例如，如果输入如下4 X 4矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 则依次打印出数字1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10. 思路分析原书中的算法需要判断多个边界条件，比较繁琐。碰巧之前做过动态规划相关的算法题，发现可以借鉴其中的一些思想，来实">
+<meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一个博客！">
-<meta property="og:url" content="http://yoursite.com/2019/09/17/我的第一个博客！/index.html">
+<meta property="og:title" content="剑指offer面试题29：顺时针打印矩阵，基于动态规划思想的Java实现">
+<meta property="og:url" content="http://yoursite.com/2019/09/22/剑指offer/index.html">
 <meta property="og:site_name" content="Vitamilk的博客">
-<meta property="og:description" content="对着教程一顿操作终于把博客建好了，打算先写一点最近做的算法题的心得体会，慢慢来吧。">
+<meta property="og:description" content="题目描述输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字，例如，如果输入如下4 X 4矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 则依次打印出数字1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10. 思路分析原书中的算法需要判断多个边界条件，比较繁琐。碰巧之前做过动态规划相关的算法题，发现可以借鉴其中的一些思想，来实">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-17T22:48:38.350Z">
+<meta property="og:updated_time" content="2019-09-22T15:59:59.230Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的第一个博客！">
-<meta name="twitter:description" content="对着教程一顿操作终于把博客建好了，打算先写一点最近做的算法题的心得体会，慢慢来吧。">
+<meta name="twitter:title" content="剑指offer面试题29：顺时针打印矩阵，基于动态规划思想的Java实现">
+<meta name="twitter:description" content="题目描述输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字，例如，如果输入如下4 X 4矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 则依次打印出数字1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10. 思路分析原书中的算法需要判断多个边界条件，比较繁琐。碰巧之前做过动态规划相关的算法题，发现可以借鉴其中的一些思想，来实">
   
     <link rel="alternative" href="/atom.xml" title="Vitamilk的博客" type="application/atom+xml">
   
@@ -126,20 +127,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-我的第一个博客！" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-剑指offer" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      我的第一个博客！
+      剑指offer面试题29：顺时针打印矩阵，基于动态规划思想的Java实现
     </h1>
   
 
         
-        <a href="/2019/09/17/我的第一个博客！/" class="archive-article-date">
-  	<time datetime="2019-09-17T10:24:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-17</time>
+        <a href="/2019/09/22/剑指offer/" class="archive-article-date">
+  	<time datetime="2019-09-22T15:10:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-22</time>
 </a>
         
       </header>
@@ -147,8 +148,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<p>对着教程一顿操作终于把博客建好了，打算先写一点最近做的算法题的心得体会，慢慢来吧。</p>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p><strong>输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字，例如，如果输入如下4 X 4矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 则依次打印出数字1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10.</strong></p>
+<h1 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h1><p>原书中的算法需要判断多个边界条件，比较繁琐。碰巧之前做过动态规划相关的算法题，发现可以借鉴其中的一些思想，来实现一个比较好理解的算法。</p>
+<p>具体思路：先设置一个boolean类型的矩阵用于记录格子是否被走过。从左上角的元素（0，0）出发，一直往右遍历，直到走到边界或者“碰到”被走过的格子时，改变方向，变成一直向下遍历，当走到边界或者“碰到”被走过的格子时，再次改变方向一直往左遍历……这样一直按照右下左上右下左上……的顺序，直到把整个矩阵遍历完。</p>
+<a id="more"></a>
 
+<h1 id="具体代码"><a href="#具体代码" class="headerlink" title="具体代码"></a>具体代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">import java.util.ArrayList;</span><br><span class="line">public class Solution &#123;</span><br><span class="line">    public ArrayList&lt;Integer&gt; printMatrix(int [][] matrix) &#123;</span><br><span class="line">       boolean[][] visited = new boolean[matrix.length][matrix[0].length];//记录格子是否走过</span><br><span class="line">        ArrayList&lt;Integer&gt; printM = new ArrayList&lt;&gt;();</span><br><span class="line">        visited[0][0] = true;</span><br><span class="line">        printM.add(matrix[0][0]);</span><br><span class="line">        int i = 0;</span><br><span class="line">        int j = 0;</span><br><span class="line"></span><br><span class="line">		//当不能往右走，又不能往下走时（针对只剩一列的情况），说明矩阵的全部格子都被走完，停止遍历</span><br><span class="line">        while( (j+1 &lt; matrix[0].length &amp;&amp; !visited[i][j+1]) ||</span><br><span class="line">                (i+1 &lt; matrix.length &amp;&amp; !visited[i+1][j]))&#123;</span><br><span class="line"></span><br><span class="line">            //一直往右走    </span><br><span class="line">            while( j+1 &lt; matrix[0].length &amp;&amp; !visited[i][j+1]) &#123;</span><br><span class="line">                visited[i][j + 1] = true;</span><br><span class="line">                printM.add(matrix[i][j + 1]);</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">			//一直往下走</span><br><span class="line">            while(i+1 &lt; matrix.length &amp;&amp; !visited[i+1][j])&#123;</span><br><span class="line">                visited[i+1][j] = true;</span><br><span class="line">                printM.add(matrix[i+1][j]);</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">			//一直往左走</span><br><span class="line">            while(j-1 &gt;=0 &amp;&amp; !visited[i][j-1])&#123;</span><br><span class="line">                visited[i][j-1] = true;</span><br><span class="line">                printM.add(matrix[i][j-1]);</span><br><span class="line">                j--;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">			//一直往上走</span><br><span class="line">            while(i-1 &gt;= 0 &amp;&amp; !visited[i-1][j])&#123;</span><br><span class="line">                visited[i-1][j] = true;</span><br><span class="line">                printM.add(matrix[i-1][j]);</span><br><span class="line">                i--;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return printM;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -156,6 +161,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -206,7 +222,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/17/我的第一个博客！/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/22/剑指offer/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -220,15 +236,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/09/22/剑指offer/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          剑指offer面试题29：顺时针打印矩阵，基于动态规划思想的Java实现
-        
-      </div>
-    </a>
   
+    <a href="/2019/09/17/我的第一个博客！/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我的第一个博客！</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
