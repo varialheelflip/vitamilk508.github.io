@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>剑指offer面试题29：顺时针打印矩阵，基于动态规划思想的Java实现 | Vitamilk的博客</title>
+  <title>剑指offer面试题8：二叉树的下一个节点，Java实现（流程图大法好） | Vitamilk的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目描述输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字，例如，如果输入如下4 X 4矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 则依次打印出数字1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10. 思路分析原书中的算法需要判断多个边界条件，比较繁琐。碰巧之前做过动态规划相关的算法题，发现可以借鉴其中的一些思想，来实现">
+  <meta name="description" content="题目描述给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回。注意，树中的结点不仅包含左右子结点，同时包含指向父结点的指针 思路分析分三种情况讨论：  当前结点有右子树。只需将指针移动到右子树的根节点，然后一直往左子树方向遍历到叶子结点，然后返回此叶子结点即可  当前结点没有右子树，但是指针往父结点方向移动的过程中，遇到某一结点是其父结点的左子结点，则返回此父结点  当前结点没有">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="剑指offer面试题29：顺时针打印矩阵，基于动态规划思想的Java实现">
-<meta property="og:url" content="http://yoursite.com/2019/09/22/剑指offer/index.html">
+<meta property="og:title" content="剑指offer面试题8：二叉树的下一个节点，Java实现（流程图大法好）">
+<meta property="og:url" content="http://yoursite.com/2019/09/23/Offer8/index.html">
 <meta property="og:site_name" content="Vitamilk的博客">
-<meta property="og:description" content="题目描述输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字，例如，如果输入如下4 X 4矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 则依次打印出数字1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10. 思路分析原书中的算法需要判断多个边界条件，比较繁琐。碰巧之前做过动态规划相关的算法题，发现可以借鉴其中的一些思想，来实现">
+<meta property="og:description" content="题目描述给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回。注意，树中的结点不仅包含左右子结点，同时包含指向父结点的指针 思路分析分三种情况讨论：  当前结点有右子树。只需将指针移动到右子树的根节点，然后一直往左子树方向遍历到叶子结点，然后返回此叶子结点即可  当前结点没有右子树，但是指针往父结点方向移动的过程中，遇到某一结点是其父结点的左子结点，则返回此父结点  当前结点没有">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-23T01:20:04.109Z">
+<meta property="og:updated_time" content="2019-09-23T15:13:41.791Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="剑指offer面试题29：顺时针打印矩阵，基于动态规划思想的Java实现">
-<meta name="twitter:description" content="题目描述输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字，例如，如果输入如下4 X 4矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 则依次打印出数字1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10. 思路分析原书中的算法需要判断多个边界条件，比较繁琐。碰巧之前做过动态规划相关的算法题，发现可以借鉴其中的一些思想，来实现">
+<meta name="twitter:title" content="剑指offer面试题8：二叉树的下一个节点，Java实现（流程图大法好）">
+<meta name="twitter:description" content="题目描述给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回。注意，树中的结点不仅包含左右子结点，同时包含指向父结点的指针 思路分析分三种情况讨论：  当前结点有右子树。只需将指针移动到右子树的根节点，然后一直往左子树方向遍历到叶子结点，然后返回此叶子结点即可  当前结点没有右子树，但是指针往父结点方向移动的过程中，遇到某一结点是其父结点的左子结点，则返回此父结点  当前结点没有">
   
     <link rel="alternative" href="/atom.xml" title="Vitamilk的博客" type="application/atom+xml">
   
@@ -127,36 +127,71 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-剑指offer" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Offer8" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      剑指offer面试题29：顺时针打印矩阵，基于动态规划思想的Java实现
+      剑指offer面试题8：二叉树的下一个节点，Java实现（流程图大法好）
     </h1>
   
 
         
-        <a href="/2019/09/22/剑指offer/" class="archive-article-date">
-  	<time datetime="2019-09-22T15:10:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-22</time>
+        <a href="/2019/09/23/Offer8/" class="archive-article-date">
+  	<time datetime="2019-09-23T13:43:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p><strong>输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字，例如，如果输入如下4 X 4矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 则依次打印出数字1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10.</strong></p>
-<h1 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h1><p>原书中的算法需要判断多个边界条件，比较繁琐。碰巧之前做过动态规划相关的算法题，发现可以借鉴其中的一些思想，来实现一个比较好理解的算法。</p>
-<p>具体思路：先设置一个boolean类型的矩阵用于记录格子是否被走过。从左上角的元素（0，0）出发，一直往右遍历，直到走到边界或者“碰到”被走过的格子时，改变方向，变成一直向下遍历，当走到边界或者“碰到”被走过的格子时，再次改变方向一直往左遍历……这样一直按照右下左上右下左上……的顺序，直到把整个矩阵遍历完。</p>
-<a id="more"></a>
+        <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p><strong>给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回。注意，树中的结点不仅包含左右子结点，同时包含指向父结点的指针</strong></p>
+<h1 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h1><p><strong>分三种情况讨论：</strong></p>
+<ol>
+<li><p>当前结点有右子树。只需将指针移动到右子树的根节点，然后一直往左子树方向遍历到叶子结点，然后返回此叶子结点即可</p>
+</li>
+<li><p>当前结点没有右子树，但是指针往父结点方向移动的过程中，遇到某一结点是其父结点的左子结点，则返回此父结点</p>
+</li>
+<li><p>当前结点没有右子树，而且没有父结点或指针往父结点方向移动的过程中都是右子结点的情况，此时说明当前结点为中序遍历的最后一个结点，所以返回null</p>
+</li>
+</ol>
+<p><strong>总的来说思路不难，但是由于涉及到空指针的判断以及结点地址值的比较，所以实际写代码的时候很容易混乱，造成空指针异常，后来发现借助流程图可以很好地帮助理解代码思路。</strong></p>
+<h1 id="流程图如下："><a href="#流程图如下：" class="headerlink" title="流程图如下："></a>流程图如下：</h1><a id="more"></a>
 
-<h1 id="具体代码"><a href="#具体代码" class="headerlink" title="具体代码"></a>具体代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">import java.util.ArrayList;</span><br><span class="line">public class Solution &#123;</span><br><span class="line">    public ArrayList&lt;Integer&gt; printMatrix(int [][] matrix) &#123;</span><br><span class="line">    	//记录格子是否走过</span><br><span class="line">       boolean[][] visited = new boolean[matrix.length][matrix[0].length];</span><br><span class="line">        ArrayList&lt;Integer&gt; printM = new ArrayList&lt;&gt;();</span><br><span class="line">        visited[0][0] = true;</span><br><span class="line">        printM.add(matrix[0][0]);</span><br><span class="line">        int i = 0;</span><br><span class="line">        int j = 0;</span><br><span class="line"></span><br><span class="line">		//当不能往右走，又不能往下走时（针对只剩一列的情况），说明矩阵的全部格子都被走完，停止遍历</span><br><span class="line">        while( (j+1 &lt; matrix[0].length &amp;&amp; !visited[i][j+1]) ||</span><br><span class="line">                (i+1 &lt; matrix.length &amp;&amp; !visited[i+1][j]))&#123;</span><br><span class="line"></span><br><span class="line">            //一直往右走    </span><br><span class="line">            while( j+1 &lt; matrix[0].length &amp;&amp; !visited[i][j+1]) &#123;</span><br><span class="line">                visited[i][j + 1] = true;</span><br><span class="line">                printM.add(matrix[i][j + 1]);</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">			//一直往下走</span><br><span class="line">            while(i+1 &lt; matrix.length &amp;&amp; !visited[i+1][j])&#123;</span><br><span class="line">                visited[i+1][j] = true;</span><br><span class="line">                printM.add(matrix[i+1][j]);</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">			//一直往左走</span><br><span class="line">            while(j-1 &gt;=0 &amp;&amp; !visited[i][j-1])&#123;</span><br><span class="line">                visited[i][j-1] = true;</span><br><span class="line">                printM.add(matrix[i][j-1]);</span><br><span class="line">                j--;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">			//一直往上走</span><br><span class="line">            while(i-1 &gt;= 0 &amp;&amp; !visited[i-1][j])&#123;</span><br><span class="line">                visited[i-1][j] = true;</span><br><span class="line">                printM.add(matrix[i-1][j]);</span><br><span class="line">                i--;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return printM;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div id="flowchart-0" class="flow-chart"></div>
 
-<h1 id="时间、空间复杂度"><a href="#时间、空间复杂度" class="headerlink" title="时间、空间复杂度"></a>时间、空间复杂度</h1><h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p>为方便计算，不妨假设矩阵为n阶方阵。容易看出内循环为O(n)，对于外循环，每右下左上走完一圈就要判断一次，每走完一圈矩阵降2阶，故需要判断n/2次，所以总的复杂度为O(n^2)</p>
-<h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h2><p>开辟了一个同样大小的矩阵用于记录格子是否被访问过，一个数组用于记录遍历结果，所以空间复杂度同样是O(n^2)</p>
 
+
+<h1 id="具体代码"><a href="#具体代码" class="headerlink" title="具体代码"></a>具体代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public TreeLinkNode GetNext(TreeLinkNode pNode)&#123;</span><br><span class="line">        if(pNode.right!=null)&#123;</span><br><span class="line">            pNode = pNode.right;</span><br><span class="line">            while(pNode.left!=null)&#123;</span><br><span class="line">                pNode = pNode.left;</span><br><span class="line">            &#125;</span><br><span class="line">            return pNode;</span><br><span class="line">        &#125;</span><br><span class="line">        while(pNode.next!=null &amp;&amp; pNode.next.right==pNode)</span><br><span class="line">            pNode=pNode.next;</span><br><span class="line">        if(pNode.next==null)</span><br><span class="line">            return null;</span><br><span class="line">        else return pNode.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">
+st=>start: 开始框
+
+cond1=>condition: 是否有右子树
+
+cond2=>condition: 是否有父结点
+
+cond3=>condition: 是否为父结点的左子结点
+
+op=>operation: 指针移动到父结点
+
+io1=>inputoutput: 指针移到右子结点并一直向左遍历，返回叶子结点
+
+io2=>inputoutput: 返回null
+
+io3=>inputoutput: 返回父结点
+
+e=>end: 结束框
+
+st(right)->cond1(yes)->io1->e
+
+cond1(no,right)->cond2(no)->io2->e
+
+cond2(yes,right)->cond3(yes)->io3->e
+
+cond3(no,right)->op(top)->cond2</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script>
       
 
       
@@ -225,7 +260,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/22/剑指offer/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/23/Offer8/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -239,18 +274,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/09/23/Offer8/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          剑指offer面试题8：二叉树的下一个节点，Java实现（流程图大法好）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/09/17/我的第一个博客！/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">我的第一个博客！</div>
+    <a href="/2019/09/22/剑指offer/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">剑指offer面试题29：顺时针打印矩阵，基于动态规划思想的Java实现</div>
       <i class="icon-circle-right"></i>
     </a>
   
