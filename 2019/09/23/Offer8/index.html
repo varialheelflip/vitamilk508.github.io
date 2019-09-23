@@ -166,7 +166,7 @@
 
 <h1 id="具体代码"><a href="#具体代码" class="headerlink" title="具体代码"></a>具体代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public TreeLinkNode GetNext(TreeLinkNode pNode)&#123;</span><br><span class="line">        if(pNode.right!=null)&#123;</span><br><span class="line">            pNode = pNode.right;</span><br><span class="line">            while(pNode.left!=null)&#123;</span><br><span class="line">                pNode = pNode.left;</span><br><span class="line">            &#125;</span><br><span class="line">            return pNode;</span><br><span class="line">        &#125;</span><br><span class="line">        while(pNode.next!=null &amp;&amp; pNode.next.right==pNode)</span><br><span class="line">            pNode=pNode.next;</span><br><span class="line">        if(pNode.next==null)</span><br><span class="line">            return null;</span><br><span class="line">        else return pNode.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">
+<script src="https://cdn.bootcss.com/raphael/2.2.8/raphael.min.js"></script><script src="https://cdn.bootcss.com/flowchart/1.11.3/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">
 st=>start: 开始框
 
 cond1=>condition: 是否有右子树
@@ -191,7 +191,7 @@ cond1(no,right)->cond2(no)->io2->e
 
 cond2(yes,right)->cond3(yes)->io3->e
 
-cond3(no,right)->op(top)->cond2</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script>
+cond3(no,right)->op(top)->cond2</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":"1,","line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script>
       
 
       
